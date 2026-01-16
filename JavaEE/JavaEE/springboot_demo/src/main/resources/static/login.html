@@ -1,0 +1,21 @@
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js">
+</script>
+<script>
+  function login() {
+    $.ajax({
+      type: "post",
+      url: "/user/login",
+      data: {
+        "userName": $("#userName").val(),
+        "password": $("#password").val()
+      },
+      success: function (result) {
+        if (result) {
+          location.href = "/index.html"
+        } else {
+          alert("账号或密码有误.");
+        }
+      }
+    });
+  }
+</script>

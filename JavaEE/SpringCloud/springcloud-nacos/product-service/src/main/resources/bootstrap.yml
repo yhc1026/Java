@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: cloud-product
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 43.138.24.159:8848
+        namespace: 4fbaf4af-9777-4c9a-a783-ba0634fe3e0d

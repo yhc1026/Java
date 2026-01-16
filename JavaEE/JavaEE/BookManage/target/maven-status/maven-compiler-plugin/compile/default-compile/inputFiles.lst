@@ -1,0 +1,12 @@
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\BookManageApplication.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\controller\BookController.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\controller\UserController.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\entity\BookInfo.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\entity\PageRequest.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\entity\ResponseResult.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\entity\UserInfo.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\enums\BookStatusEnum.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\mapper\BookInfoMapper.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\mapper\UserInfoMapper.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\service\BookService.java
+D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\BookManage\src\main\java\com\spring\bookmanage\service\UserInfoService.java

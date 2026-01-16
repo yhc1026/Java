@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: BookManage
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/book_test?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  file:
+    name: spring-book.log

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo
+captcha:
+  width: 100
+  height: 200
+  session:
+    captchaCode: CAPTCHA_CODE
+    time: CAPTCHA_DATE

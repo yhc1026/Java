@@ -1,0 +1,12 @@
+com\spring\bookmanage\service\UserInfoService.class
+com\spring\bookmanage\service\BookService.class
+com\spring\bookmanage\entity\PageRequest.class
+com\spring\bookmanage\BookManageApplication.class
+com\spring\bookmanage\enums\BookStatusEnum.class
+com\spring\bookmanage\mapper\BookInfoMapper.class
+com\spring\bookmanage\mapper\UserInfoMapper.class
+com\spring\bookmanage\entity\ResponseResult.class
+com\spring\bookmanage\entity\UserInfo.class
+com\spring\bookmanage\controller\BookController.class
+com\spring\bookmanage\controller\UserController.class
+com\spring\bookmanage\entity\BookInfo.class

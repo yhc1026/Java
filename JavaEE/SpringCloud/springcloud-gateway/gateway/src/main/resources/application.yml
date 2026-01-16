@@ -1,0 +1,21 @@
+server:
+  port: 10030
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.138.24.159:8848
+        namespace: 4fbaf4af-9777-4c9a-a783-ba0634fe3e0d
+    gateway:
+      routes:
+        - id: order-service
+          uri: lb://cloud-order/
+          predicates:
+            - Path=/order/**,/feign/**
+        - id: product-service
+          uri: lb://cloud-product/
+          predicates:
+            - Path=/product/**
+

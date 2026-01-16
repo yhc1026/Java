@@ -1,0 +1,886 @@
+2025-12-25T15:05:14.087+08:00  INFO 26264 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 26264 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:05:14.092+08:00  INFO 26264 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:05:14.812+08:00  INFO 26264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:05:14.820+08:00  INFO 26264 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:05:14.820+08:00  INFO 26264 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:05:14.852+08:00  INFO 26264 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:05:14.852+08:00  INFO 26264 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 724 ms
+2025-12-25T15:05:15.141+08:00  WARN 26264 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userService': Error creating bean with name 'userServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference or an asynchronous initialization dependency?
+2025-12-25T15:05:15.144+08:00  INFO 26264 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-12-25T15:05:15.152+08:00  INFO 26264 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-25T15:05:15.164+08:00 ERROR 26264 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   userController (field private com.spring.blogsystem.service.UserService com.spring.blogsystem.controller.UserController.userService)
+┌─────┐
+|  userServiceImpl (field private com.spring.blogsystem.service.UserService com.spring.blogsystem.service.impl.UserServiceImpl.userService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2025-12-25T15:06:08.038+08:00  INFO 24292 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 24292 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:06:08.040+08:00  INFO 24292 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:06:08.590+08:00  INFO 24292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:06:08.597+08:00  INFO 24292 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:06:08.598+08:00  INFO 24292 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:06:08.624+08:00  INFO 24292 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:06:08.624+08:00  INFO 24292 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 562 ms
+2025-12-25T15:06:09.026+08:00  INFO 24292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T15:06:09.032+08:00  INFO 24292 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.281 seconds (process running for 1.647)
+2025-12-25T15:06:13.468+08:00  INFO 24292 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T15:06:13.469+08:00  INFO 24292 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T15:06:13.470+08:00  INFO 24292 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-25T15:06:13.521+08:00  INFO 24292 --- [http-nio-8080-exec-1] c.s.b.controller.UserController          : controller
+2025-12-25T15:06:13.576+08:00  INFO 24292 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T15:06:13.672+08:00  INFO 24292 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a2b0bc9
+2025-12-25T15:06:13.674+08:00  INFO 24292 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T15:06:13.708+08:00  INFO 24292 --- [http-nio-8080-exec-1] c.s.b.service.impl.UserServiceImpl       : userInfo is null
+2025-12-25T15:06:13.709+08:00 ERROR 24292 --- [http-nio-8080-exec-1] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=用户不存在)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:43) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:06:21.535+08:00  INFO 24292 --- [http-nio-8080-exec-4] c.s.b.controller.UserController          : controller
+2025-12-25T15:06:21.540+08:00  INFO 24292 --- [http-nio-8080-exec-4] c.s.b.service.impl.UserServiceImpl       : userInfo is null
+2025-12-25T15:06:21.541+08:00 ERROR 24292 --- [http-nio-8080-exec-4] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=用户不存在)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:43) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:07:03.506+08:00  INFO 24292 --- [http-nio-8080-exec-2] c.s.b.controller.UserController          : controller
+2025-12-25T15:07:03.523+08:00  INFO 24292 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : userInfo is null
+2025-12-25T15:07:03.524+08:00 ERROR 24292 --- [http-nio-8080-exec-2] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=用户不存在)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:43) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:07:20.572+08:00  INFO 24292 --- [http-nio-8080-exec-5] c.s.b.controller.UserController          : controller
+2025-12-25T15:07:20.574+08:00  INFO 24292 --- [http-nio-8080-exec-5] c.s.b.service.impl.UserServiceImpl       : userInfo is null
+2025-12-25T15:07:20.574+08:00 ERROR 24292 --- [http-nio-8080-exec-5] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=用户不存在)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:43) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:07:53.357+08:00  INFO 24292 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T15:07:53.457+08:00  INFO 24292 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T15:07:53.462+08:00  INFO 24292 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T15:07:53.469+08:00  INFO 24292 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-25T15:07:56.357+08:00  INFO 29720 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 29720 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:07:56.357+08:00  INFO 29720 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:07:56.903+08:00  INFO 29720 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:07:56.910+08:00  INFO 29720 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:07:56.910+08:00  INFO 29720 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:07:56.936+08:00  INFO 29720 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:07:56.936+08:00  INFO 29720 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 554 ms
+2025-12-25T15:07:57.299+08:00  INFO 29720 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T15:07:57.306+08:00  INFO 29720 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.233 seconds (process running for 1.6)
+2025-12-25T15:07:58.856+08:00  INFO 29720 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T15:07:58.857+08:00  INFO 29720 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T15:07:58.857+08:00  INFO 29720 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-25T15:07:58.900+08:00  INFO 29720 --- [http-nio-8080-exec-1] c.s.b.controller.UserController          : controller
+2025-12-25T15:07:58.943+08:00  INFO 29720 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T15:07:59.019+08:00  INFO 29720 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a7224e8
+2025-12-25T15:07:59.020+08:00  INFO 29720 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T15:07:59.049+08:00  INFO 29720 --- [http-nio-8080-exec-1] c.s.b.service.impl.UserServiceImpl       : userInfo:null
+2025-12-25T15:07:59.050+08:00  INFO 29720 --- [http-nio-8080-exec-1] c.s.b.service.impl.UserServiceImpl       : userInfo is null
+2025-12-25T15:07:59.051+08:00 ERROR 29720 --- [http-nio-8080-exec-1] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=用户不存在)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:45) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:08:27.595+08:00  INFO 29720 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T15:08:27.687+08:00  INFO 29720 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T15:08:27.691+08:00  INFO 29720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T15:08:27.695+08:00  INFO 29720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-25T15:08:30.558+08:00  INFO 28244 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 28244 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:08:30.560+08:00  INFO 28244 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:08:31.121+08:00  INFO 28244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:08:31.129+08:00  INFO 28244 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:08:31.129+08:00  INFO 28244 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:08:31.165+08:00  INFO 28244 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:08:31.165+08:00  INFO 28244 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 578 ms
+2025-12-25T15:08:31.541+08:00  INFO 28244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T15:08:31.548+08:00  INFO 28244 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.282 seconds (process running for 1.66)
+2025-12-25T15:08:35.450+08:00  INFO 28244 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T15:08:35.450+08:00  INFO 28244 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T15:08:35.451+08:00  INFO 28244 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-25T15:08:35.496+08:00  INFO 28244 --- [http-nio-8080-exec-2] c.s.b.controller.UserController          : controller
+2025-12-25T15:08:35.497+08:00  INFO 28244 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=zhangsan, password=123456)
+2025-12-25T15:08:35.540+08:00  INFO 28244 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T15:08:35.626+08:00  INFO 28244 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52aacde4
+2025-12-25T15:08:35.627+08:00  INFO 28244 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T15:08:35.656+08:00  INFO 28244 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : userInfo is null
+2025-12-25T15:08:35.657+08:00 ERROR 28244 --- [http-nio-8080-exec-2] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=用户不存在)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:46) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:10:13.448+08:00  INFO 28244 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T15:10:13.539+08:00  INFO 28244 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T15:10:13.543+08:00  INFO 28244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T15:10:13.551+08:00  INFO 28244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-25T15:10:16.544+08:00  INFO 31348 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 31348 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:10:16.545+08:00  INFO 31348 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:10:17.110+08:00  INFO 31348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:10:17.116+08:00  INFO 31348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:10:17.117+08:00  INFO 31348 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:10:17.143+08:00  INFO 31348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:10:17.143+08:00  INFO 31348 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 573 ms
+2025-12-25T15:10:17.531+08:00  INFO 31348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T15:10:17.539+08:00  INFO 31348 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.279 seconds (process running for 1.667)
+2025-12-25T15:10:19.521+08:00  INFO 31348 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T15:10:19.521+08:00  INFO 31348 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T15:10:19.521+08:00  INFO 31348 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-25T15:10:19.573+08:00  INFO 31348 --- [http-nio-8080-exec-2] c.s.b.controller.UserController          : controller
+2025-12-25T15:10:19.574+08:00  INFO 31348 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=zhangsan, password=123456)
+2025-12-25T15:10:19.624+08:00  INFO 31348 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T15:10:19.705+08:00  INFO 31348 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51771791
+2025-12-25T15:10:19.706+08:00  INFO 31348 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T15:10:19.746+08:00  INFO 31348 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : password wrong
+2025-12-25T15:10:19.747+08:00 ERROR 31348 --- [http-nio-8080-exec-2] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=密码错误)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:56) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:10:59.739+08:00  INFO 31348 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T15:10:59.824+08:00  INFO 31348 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T15:10:59.827+08:00  INFO 31348 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T15:10:59.833+08:00  INFO 31348 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-25T15:11:02.584+08:00  INFO 27412 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 27412 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:11:02.585+08:00  INFO 27412 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:11:03.151+08:00  INFO 27412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:11:03.157+08:00  INFO 27412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:11:03.158+08:00  INFO 27412 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:11:03.185+08:00  INFO 27412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:11:03.186+08:00  INFO 27412 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 573 ms
+2025-12-25T15:11:03.559+08:00  INFO 27412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T15:11:03.568+08:00  INFO 27412 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.272 seconds (process running for 1.65)
+2025-12-25T15:11:07.301+08:00  INFO 27412 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T15:11:07.301+08:00  INFO 27412 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T15:11:07.301+08:00  INFO 27412 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-25T15:11:07.346+08:00  INFO 27412 --- [http-nio-8080-exec-4] c.s.b.controller.UserController          : controller
+2025-12-25T15:11:07.346+08:00  INFO 27412 --- [http-nio-8080-exec-4] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=zhangsan, password=123456)
+2025-12-25T15:11:07.389+08:00  INFO 27412 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T15:11:07.467+08:00  INFO 27412 --- [http-nio-8080-exec-4] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65945b66
+2025-12-25T15:11:07.468+08:00  INFO 27412 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T15:11:07.503+08:00  INFO 27412 --- [http-nio-8080-exec-4] c.spring.blogsystem.utils.SecurityUtils  : encrypt:89a6168dba2e4f51b42160c72f639af024d885a07b845e455f0462d0707f7dd3
+2025-12-25T15:11:07.503+08:00  INFO 27412 --- [http-nio-8080-exec-4] c.spring.blogsystem.utils.SecurityUtils  : password:123456
+2025-12-25T15:11:07.504+08:00  INFO 27412 --- [http-nio-8080-exec-4] c.s.b.service.impl.UserServiceImpl       : password wrong
+2025-12-25T15:11:07.504+08:00 ERROR 27412 --- [http-nio-8080-exec-4] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=密码错误)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:56) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:11:23.030+08:00  INFO 27412 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T15:11:23.113+08:00  INFO 27412 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T15:11:23.116+08:00  INFO 27412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T15:11:23.126+08:00  INFO 27412 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-25T15:12:39.136+08:00  INFO 9332 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 9332 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:12:39.137+08:00  INFO 9332 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:12:39.718+08:00  INFO 9332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:12:39.725+08:00  INFO 9332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:12:39.725+08:00  INFO 9332 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:12:39.755+08:00  INFO 9332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:12:39.755+08:00  INFO 9332 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 591 ms
+2025-12-25T15:12:40.134+08:00  INFO 9332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T15:12:40.142+08:00  INFO 9332 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.29 seconds (process running for 1.671)
+2025-12-25T15:12:42.170+08:00  INFO 9332 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T15:12:42.170+08:00  INFO 9332 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T15:12:42.172+08:00  INFO 9332 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-25T15:12:42.224+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.s.b.controller.UserController          : controller
+2025-12-25T15:12:42.224+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=zhangsan, password=123456)
+2025-12-25T15:12:42.274+08:00  INFO 9332 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T15:12:42.361+08:00  INFO 9332 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a8ed6d5
+2025-12-25T15:12:42.362+08:00  INFO 9332 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T15:12:42.400+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : ////////////////////////////////////////////////
+2025-12-25T15:12:42.400+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : encrypt:89a6168dba2e4f51b42160c72f639af024d885a07b845e455f0462d0707f7dd3
+2025-12-25T15:12:42.400+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : ////////////////////////////////////////////////
+2025-12-25T15:12:42.401+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : ////////////////////////////////////////////////
+2025-12-25T15:12:42.401+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : checker:24d885a07b845e455f0462d0707f7dd3
+2025-12-25T15:12:42.401+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : ////////////////////////////////////////////////
+2025-12-25T15:12:42.401+08:00  INFO 9332 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : password wrong
+2025-12-25T15:12:42.402+08:00 ERROR 9332 --- [http-nio-8080-exec-2] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=密码错误)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:56) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:13:08.125+08:00  INFO 9332 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T15:13:08.211+08:00  INFO 9332 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T15:13:08.218+08:00  INFO 9332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T15:13:08.223+08:00  INFO 9332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-25T15:13:10.917+08:00  INFO 1580 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 1580 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:13:10.918+08:00  INFO 1580 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:13:11.480+08:00  INFO 1580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:13:11.487+08:00  INFO 1580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:13:11.488+08:00  INFO 1580 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:13:11.516+08:00  INFO 1580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:13:11.516+08:00  INFO 1580 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 573 ms
+2025-12-25T15:13:11.886+08:00  INFO 1580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T15:13:11.898+08:00  INFO 1580 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.272 seconds (process running for 1.642)
+2025-12-25T15:13:13.351+08:00  INFO 1580 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T15:13:13.352+08:00  INFO 1580 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T15:13:13.352+08:00  INFO 1580 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-25T15:13:13.398+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.s.b.controller.UserController          : controller
+2025-12-25T15:13:13.398+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=zhangsan, password=123456)
+2025-12-25T15:13:13.447+08:00  INFO 1580 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T15:13:13.529+08:00  INFO 1580 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6234e3f7
+2025-12-25T15:13:13.531+08:00  INFO 1580 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T15:13:13.566+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : ////////////////////////////////////////////////
+2025-12-25T15:13:13.566+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : encrypt:89a6168dba2e4f51b42160c72f639af024d885a07b845e455f0462d0707f7dd3
+2025-12-25T15:13:13.566+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : ////////////////////////////////////////////////
+2025-12-25T15:13:13.567+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : ////////////////////////////////////////////////
+2025-12-25T15:13:13.567+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : checker:89a6168dba2e4f51b42160c72f639af024d885a07b845e455f0462d0707f7dd3
+2025-12-25T15:13:13.567+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.spring.blogsystem.utils.SecurityUtils  : ////////////////////////////////////////////////
+2025-12-25T15:13:13.567+08:00  INFO 1580 --- [http-nio-8080-exec-2] c.s.b.service.impl.UserServiceImpl       : success
+2025-12-25T15:13:36.015+08:00  INFO 1580 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T15:13:36.104+08:00  INFO 1580 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T15:13:36.107+08:00  INFO 1580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T15:13:36.113+08:00  INFO 1580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-25T15:13:38.858+08:00  INFO 7048 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 7048 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T15:13:38.860+08:00  INFO 7048 --- [main] c.s.blogsystem.BlogsystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-25T15:13:39.405+08:00  INFO 7048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T15:13:39.412+08:00  INFO 7048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T15:13:39.412+08:00  INFO 7048 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T15:13:39.440+08:00  INFO 7048 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T15:13:39.440+08:00  INFO 7048 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 555 ms
+2025-12-25T15:13:39.828+08:00  INFO 7048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T15:13:39.836+08:00  INFO 7048 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.257 seconds (process running for 1.654)
+2025-12-25T15:13:42.025+08:00  INFO 7048 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T15:13:42.025+08:00  INFO 7048 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T15:13:42.026+08:00  INFO 7048 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-25T15:13:42.072+08:00  INFO 7048 --- [http-nio-8080-exec-1] c.s.b.controller.UserController          : controller
+2025-12-25T15:13:42.072+08:00  INFO 7048 --- [http-nio-8080-exec-1] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=zhangsan, password=123456)
+2025-12-25T15:13:42.116+08:00  INFO 7048 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T15:13:42.194+08:00  INFO 7048 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b0cb1d6
+2025-12-25T15:13:42.195+08:00  INFO 7048 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T15:13:42.227+08:00  INFO 7048 --- [http-nio-8080-exec-1] c.s.b.service.impl.UserServiceImpl       : success
+2025-12-25T15:13:48.588+08:00  INFO 7048 --- [http-nio-8080-exec-6] c.s.b.controller.UserController          : controller
+2025-12-25T15:13:48.588+08:00  INFO 7048 --- [http-nio-8080-exec-6] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=lisi, password=123456)
+2025-12-25T15:13:48.591+08:00  INFO 7048 --- [http-nio-8080-exec-6] c.s.b.service.impl.UserServiceImpl       : success
+2025-12-25T15:13:52.184+08:00  INFO 7048 --- [http-nio-8080-exec-9] c.s.b.controller.UserController          : controller
+2025-12-25T15:13:52.184+08:00  INFO 7048 --- [http-nio-8080-exec-9] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=lisi, password=123450)
+2025-12-25T15:13:52.187+08:00  INFO 7048 --- [http-nio-8080-exec-9] c.s.b.service.impl.UserServiceImpl       : password wrong
+2025-12-25T15:13:52.188+08:00 ERROR 7048 --- [http-nio-8080-exec-9] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=密码错误)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:56) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:13:57.969+08:00  INFO 7048 --- [http-nio-8080-exec-3] c.s.b.controller.UserController          : controller
+2025-12-25T15:13:57.970+08:00  INFO 7048 --- [http-nio-8080-exec-3] c.s.b.service.impl.UserServiceImpl       : userLoginRequest:UserLoginRequest(username=l=isi, password=12345)
+2025-12-25T15:13:57.972+08:00  INFO 7048 --- [http-nio-8080-exec-3] c.s.b.service.impl.UserServiceImpl       : userInfo is null
+2025-12-25T15:13:57.972+08:00 ERROR 7048 --- [http-nio-8080-exec-3] c.s.b.common.advice.ExceptionAdvice      : 【抛出异常被捕获】{}
+
+BlogException(code=-1, errMsg=用户不存在)
+	at com.spring.blogsystem.service.impl.UserServiceImpl.checkPassword(UserServiceImpl.java:46) ~[classes/:na]
+	at com.spring.blogsystem.controller.UserController.login(UserController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-12-25T15:16:47.792+08:00  INFO 7048 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T15:16:47.894+08:00  INFO 7048 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T15:16:47.897+08:00  INFO 7048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T15:16:47.902+08:00  INFO 7048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-25T19:06:03.734+08:00  INFO 35096 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 35096 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T19:06:03.735+08:00  INFO 35096 --- [main] c.s.blogsystem.BlogsystemApplication     : The following 1 profile is active: "prod"
+2025-12-25T19:06:04.409+08:00  INFO 35096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T19:06:04.418+08:00  INFO 35096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T19:06:04.418+08:00  INFO 35096 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T19:06:04.450+08:00  INFO 35096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T19:06:04.450+08:00  INFO 35096 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 689 ms
+2025-12-25T19:06:04.902+08:00  INFO 35096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T19:06:04.907+08:00  INFO 35096 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.51 seconds (process running for 1.976)
+2025-12-25T19:07:11.949+08:00  INFO 35096 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T19:07:12.042+08:00  INFO 35096 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T19:11:29.845+08:00  INFO 12056 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 12056 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T19:11:29.847+08:00  INFO 12056 --- [main] c.s.blogsystem.BlogsystemApplication     : The following 1 profile is active: "dev"
+2025-12-25T19:11:30.438+08:00  INFO 12056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T19:11:30.445+08:00  INFO 12056 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T19:11:30.445+08:00  INFO 12056 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T19:11:30.472+08:00  INFO 12056 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T19:11:30.472+08:00  INFO 12056 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 599 ms
+2025-12-25T19:11:30.848+08:00  INFO 12056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T19:11:30.854+08:00  INFO 12056 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.331 seconds (process running for 1.741)
+2025-12-25T19:11:38.415+08:00  INFO 12056 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T19:11:38.510+08:00  INFO 12056 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T19:11:40.901+08:00  INFO 35436 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 35436 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T19:11:40.903+08:00  INFO 35436 --- [main] c.s.blogsystem.BlogsystemApplication     : The following 1 profile is active: "prod"
+2025-12-25T19:11:41.503+08:00  INFO 35436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T19:11:41.511+08:00  INFO 35436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T19:11:41.511+08:00  INFO 35436 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T19:11:41.542+08:00  INFO 35436 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T19:11:41.542+08:00  INFO 35436 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 608 ms
+2025-12-25T19:11:41.932+08:00  INFO 35436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T19:11:41.939+08:00  INFO 35436 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.346 seconds (process running for 1.737)
+2025-12-25T19:13:58.169+08:00  INFO 35436 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T19:13:58.261+08:00  INFO 35436 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T19:14:56.169+08:00  INFO 36740 --- [main] c.s.b.BlogsystemApplicationTests         : Starting BlogsystemApplicationTests using Java 18 with PID 36740 (started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T19:14:56.170+08:00  INFO 36740 --- [main] c.s.b.BlogsystemApplicationTests         : The following 1 profile is active: "prod"
+2025-12-25T19:14:57.686+08:00  INFO 36740 --- [main] c.s.b.BlogsystemApplicationTests         : Started BlogsystemApplicationTests in 1.777 seconds (process running for 2.557)
+2025-12-25T19:46:22.328+08:00  INFO 32072 --- [main] c.s.blogsystem.BlogsystemApplication     : Starting BlogsystemApplication using Java 18 with PID 32072 (D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem\target\classes started by 47894 in D:\codeC\java-int\JDK18\bit_courseJAVA\JavaEE\blogsystem)
+2025-12-25T19:46:22.329+08:00  INFO 32072 --- [main] c.s.blogsystem.BlogsystemApplication     : The following 1 profile is active: "dev"
+2025-12-25T19:46:23.001+08:00  INFO 32072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-25T19:46:23.010+08:00  INFO 32072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-25T19:46:23.011+08:00  INFO 32072 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2025-12-25T19:46:23.043+08:00  INFO 32072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-25T19:46:23.043+08:00  INFO 32072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 686 ms
+2025-12-25T19:46:23.507+08:00  INFO 32072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-25T19:46:23.514+08:00  INFO 32072 --- [main] c.s.blogsystem.BlogsystemApplication     : Started BlogsystemApplication in 1.524 seconds (process running for 2.01)
+2025-12-25T19:46:30.335+08:00  INFO 32072 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-25T19:46:30.335+08:00  INFO 32072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-25T19:46:30.337+08:00  INFO 32072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-25T19:46:30.405+08:00  INFO 32072 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-25T19:46:30.511+08:00  INFO 32072 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57a865f3
+2025-12-25T19:46:30.511+08:00  INFO 32072 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-25T19:46:30.554+08:00  INFO 32072 --- [http-nio-8080-exec-1] c.s.b.service.impl.UserServiceImpl       : success
+2025-12-25T19:47:17.423+08:00  INFO 32072 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-25T19:47:17.532+08:00  INFO 32072 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-25T19:47:17.537+08:00  INFO 32072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-25T19:47:17.542+08:00  INFO 32072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
